@@ -1,11 +1,23 @@
+To update Bash profile
+
+1) ls -A
+check file bash_profile if not Create that file and add code in the file 
+---
 ##Modify terminal and add git branch
-
-alias dk="docker"
-alias dk-c="docker-compose"
-
 parse_git_branch() {
         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 PS1="\n\[\033[01;34m\]\w \[\033[00m\]\[\033[01;32m\]\$(parse_git_branch)\[\033[00m\] \n\[\033[01;32m\]\u@\h\[\033[00m\]:\$ "
+----
 
+Edit nano .bashrc 
+and add path for .bash_profile after ,bash_alies
+------
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
+----------
+Then run source .bash_profile on root
 
+if you are not home dir then 
+source ~/.bash_profile
